@@ -8,6 +8,7 @@ class SettlementSheets extends Model
 {
     protected $table = 'settlement_sheets';
     protected $primaryKey = 'id_settlement_sheets';
+    
     public function worker(){
         return $this -> belongTo('App\Workers');
     } 

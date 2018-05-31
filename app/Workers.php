@@ -11,4 +11,7 @@ class Workers extends Model
     public function settlementsheet() {
         return $this -> hasMany('App\SettlementSheets', 'id_worker', 'id_worker');
     }
+    public function position() {
+        return $this -> hasOne('App\WPosition', 'id_position', 'id_position');
+    }
 }

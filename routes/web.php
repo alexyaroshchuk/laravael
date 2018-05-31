@@ -26,6 +26,11 @@ Route::get('/workers/{id_worker}', [
     'uses' => 'WorkerInfoController@workerShow'
 ])->name('workerShow');
 
+
+Route::post('/addworker', [
+    'uses' => 'WorkerInfoController@addWorker'
+])->name('addWorker');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
