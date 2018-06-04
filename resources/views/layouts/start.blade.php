@@ -31,7 +31,7 @@
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
                         </li>
                         <li class="nav-item  active">
-                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                            <a class="nav-link" href="{{ route('register') }}">Register</a><!-- Для буxгалтера -->
                         </li>
                     @else
                     <li class="dropdown">
@@ -40,7 +40,10 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li class="nav-item">
-                                <a href="/workers"> Workers </a>
+                                <a href="/workers"> Workers </a> <!-- Для начальника и буxгалтера -->
+                            </li>
+                            <li class="nav-item">
+                                
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('logout') }}"

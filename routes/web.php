@@ -21,15 +21,28 @@ Route::get('/registration', function () {
 Route::get('/workers' , [
     'uses' => 'WorkersController@showWorkers'
 ]);
+Route::post('/workers', [
+    'uses' => 'WorkersController@showWorkers'
+]);
 
 Route::get('/workers/{id_worker}', [
     'uses' => 'WorkerInfoController@workerShow'
 ])->name('workerShow');
 
+Route::get('/profile/{id_worker}', [
+    'uses' => 'WorkerInfoController@workerShow'
+])->name('workerShow');
+
+Route::get('/addSS', [
+    'uses' => 'SettlementSheetsController@addSS'
+])->name('addSS');
+Route::post('/addSS', [
+    'uses' => 'SettlementSheetsController@storeSS'
+])->name('storeSS');
 
 Route::post('/addworker', [
-    'uses' => 'WorkerInfoController@addWorker'
-])->name('addWorker');
+    'uses' => 'WorkerInfoController@storeWorker'
+])->name('storeWorker');
 
 Auth::routes();
 

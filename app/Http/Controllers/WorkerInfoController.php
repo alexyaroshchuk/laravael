@@ -13,25 +13,22 @@ class WorkerInfoController extends Controller
         $workerAll = Workers::all();
         $settlementsheet = $worker -> settlementsheet;
         $worker_id=$worker->id_worker;
-        $worker_id_position = $worker->id_position;
+        $worker_fullname = $worker->fullname;
         $position = $worker -> position;
         //dump($position);
-        return view('workerinfo', compact('worker_id', 'worker_id_position',
-                                        'settlementsheet', 'position')); 
+        return view('workerinfo', compact('worker_id', 'worker_fullname',
+                                        'settlementsheet', 'position', 'worker')); 
     }
 
-    
-    public function addWorker() {
-    return view ('addworker');
-}
 
- public function storeWorker(AddWorkerRequest $request) {
-        $fullname=$request->fullname;
-        $date_of_birth=$request->date_of_birth;
-        $id_poistion=$request->id_poistion;
+    public function storeWorker(Request $request) {
+        
+        $fullname = $request->fullname;
+        $date_of_birth = $request->date_of_birth;
+        $id_poistion = $request->id_poistion;
         
 
-        Worker::create([
+        Workers::create([
         'fullname'=>$fullname,
         'date_of_birth'=>$date_of_birth,
         'id_poistion' => $id_poistion,   

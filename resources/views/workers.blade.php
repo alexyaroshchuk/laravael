@@ -1,4 +1,10 @@
 @extends('layouts.start')
+    <br>
+	    min: <input type="text" name="min_P" value="{{ Input::get('max_position') }}">
+	<br>
+	    max: <input type="text" name="max_position" value="{{ Input::get('max_position') }}">
+	<button>Go</button>
+    <hr>
 
 @foreach($workers as $worker)
     <p>       

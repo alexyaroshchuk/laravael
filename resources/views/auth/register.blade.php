@@ -10,9 +10,9 @@
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
-
+                        
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name" class="col-md-4 control-label">Username</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -20,6 +20,48 @@
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                       <div class="form-group{{ $errors->has('fullname') ? ' has-error' : '' }}">
+                            <label for="fullname" class="col-md-4 control-label">Fullname</label>
+
+                            <div class="col-md-6">
+                                <input id="fullname" type="text" class="form-control" name="fullname" value="{{ old('fullname') }}" required autofocus>
+
+                                @if ($errors->has('fullname'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('fullname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('id_position') ? ' has-error' : '' }}">
+                            <label for="id_position" class="col-md-4 control-label">ID   position</label>
+
+                            <div class="col-md-6">
+                                <input id="id_position" type="text" class="form-control" name="id_position" value="{{ old('id_position') }}" required autofocus>
+
+                                @if ($errors->has('id_position'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('id_position') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
+                            <label for="date_of_birth" class="col-md-4 control-label">Дата рождения</label>
+
+                            <div class="col-md-6">
+                                <input id="date_of_birth" type="text" class="form-control" name="date_of_birth" value="{{ old('id_position') }}" required autofocus>
+
+                                @if ($errors->has('date_of_birth'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('date_of_birth') }}</strong>
                                     </span>
                                 @endif
                             </div>
